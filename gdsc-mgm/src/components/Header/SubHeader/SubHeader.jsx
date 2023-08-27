@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { SubHeaderLine } from '../../../Constants';
 
 function SubHeader() {
   return (
     <Container>
-      <Span>GDSC Yonsei 22-23</Span>
+      <Span>{SubHeaderLine}</Span>
     </Container>
   );
 }

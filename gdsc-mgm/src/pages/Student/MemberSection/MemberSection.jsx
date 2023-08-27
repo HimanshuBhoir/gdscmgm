@@ -1,10 +1,8 @@
 import HorizontalPatternImage1 from '../../../assets/images/pattern3.png';
 import HorizontalPatternImage2 from '../../../assets/images/pattern4.png';
 import { LeftAppearAnimationWidth } from '../../../components/Animation/LeftAppearAnimation';
-import { useIntersectionObserver, useMediaQuery } from '../../../hooks';
-import { MEDIA_QUERIES } from '../../../styles/media';
+import { useIntersectionObserver } from '../../../hooks';
 import { useEffect, useRef, useState } from 'react';
-// import { MouseParallaxContainer } from 'react-parallax-mouse';
 import ReactTextTransition from 'react-text-transition';
 import styled, { useTheme } from 'styled-components';
 
@@ -15,7 +13,6 @@ const Writeups = ['Lead', 'DevRel', 'Developers', ''];
 
 function MemberSection() {
   const sectionRef = useRef(null);
-  const isMobileOrTablet = useMediaQuery(MEDIA_QUERIES.TABLET);
 
   const leadCardRef = useRef(null);
   const devrelCardRef = useRef(null);
@@ -85,7 +82,7 @@ function MemberSection() {
             data-scroll-target="#fixed-element-members"
             bgcolor={handleLeftBackgroundColor(scrollIndex)}
           >
-            <LeftTitle>GDSC Yonsei</LeftTitle>
+            <LeftTitle>GDSC MGMCET</LeftTitle>
             <LeftSubtitle>
               {`${Writeups[scrollIndex]}`.split('').map((n, idx) => {
                 return (
@@ -105,17 +102,11 @@ function MemberSection() {
         </LeftContainer>
         <RightContainer>
           <div ref={leadCardRef}>
-            {/* <MouseParallaxContainer
-              globalFactorX={isMobileOrTablet ? 0 : 0.2}
-              globalFactorY={isMobileOrTablet ? 0 : 0.2}
-              resetOnLeave
-            > */}
               <LeadMemberCard
                 upperLetter={'GDSC Lead'}
                 lowerLetter={'Kiung Jung'}
                 githubID={'Quqqu'}
               />
-            {/* </MouseParallaxContainer> */}
           </div>
           <HorizontalLineWrapper>
             <HorizontalPattern
@@ -127,19 +118,12 @@ function MemberSection() {
           <div ref={devrelCardRef}>
             {DevrelList.map((el, idx) => {
               return (
-                // <MouseParallaxContainer
-                //   key={idx}
-                //   globalFactorX={isMobileOrTablet ? 0 : 0.1}
-                //   globalFactorY={isMobileOrTablet ? 0 : 0.1}
-                //   resetOnLeave
-                // >
                   <MemberCard
                     key={idx}
                     upperLetter={el.upperLetter}
                     lowerLetter={el.lowerLetter}
                     githubID={el.githubID}
                   />
-                // </MouseParallaxContainer>
               );
             })}
           </div>
@@ -153,19 +137,12 @@ function MemberSection() {
           <div ref={memberCardRef}>
             {MemberList.map((el, idx) => {
               return (
-                // <MouseParallaxContainer
-                //   key={idx}
-                //   globalFactorX={isMobileOrTablet ? 0 : 0.1}
-                //   globalFactorY={isMobileOrTablet ? 0 : 0.1}
-                //   resetOnLeave
-                // >
                   <MemberCard
                     key={idx}
                     upperLetter={el.upperLetter}
                     lowerLetter={el.lowerLetter}
                     githubID={el.githubID}
                   />
-                // </MouseParallaxContainer>
               );
             })}
           </div>

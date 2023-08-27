@@ -6,10 +6,7 @@ import { useHandleAnimationScroll, useMediaQuery, useMount } from '../../hooks';
 import { MEDIA_QUERIES } from '../../styles/media';
 import { useContext, useRef } from 'react';
 import styled, { useTheme } from 'styled-components';
-
 import Banner from './Banner/Banner';
-import { BlogSection } from './BlogSection';
-import FooterSection from './FooterSection/FooterSection';
 import { MemberSection } from './MemberSection';
 
 function StudentPage() {
@@ -33,9 +30,6 @@ function StudentPage() {
             <MemberSection />
             {isMobileOrTablet ? null : <GithubCursor />}
           </MouseContextProvider>
-          <PaddingSection />
-          <BlogSection />
-          <FooterSection />
         </Container>
       </LocomotiveScrollProvider.Vertical>
       <LoadingScreen
@@ -61,11 +55,4 @@ const Container = styled.main`
   background-color: ${(props) => props.theme.backgroundColor.white};
 
   content-visibility: auto;
-`;
-
-const PaddingSection = styled.div`
-  width: 100%;
-  height: 30vh;
-
-  background-color: transparent;
 `;

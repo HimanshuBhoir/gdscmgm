@@ -35,3 +35,9 @@ export const JOIN_COM = "https://github.com/HimanshuBhoir";
 export const Page404Line1 = "Not Sensible, Right?";
 export const Page404Line2 = "Want to know what make more Sense?";
 export const Page404Line3 = "Take me to the Place";
+
+// Home Page
+
+export const SearchBarLine = "best GDSC near me?";
+export const BannerFooterLine = "GDSC MGMCET, Navi Mumbai";
+export const SubHeaderLine = "GDSC MGMCET 2023-24";

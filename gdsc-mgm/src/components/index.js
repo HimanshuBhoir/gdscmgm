@@ -8,3 +8,4 @@ export * from './GithubCursor';
 export * from './Head';
 export * from './Header';
 export * from './LoadingScreen';
+export * from './Preloader';

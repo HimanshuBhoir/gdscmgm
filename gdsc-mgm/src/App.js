@@ -15,9 +15,10 @@ function App() {
 
   return (
     // Wrap the application with the TransitionColorProvider context provider
-      <TransitionColorProvider>
+    <TransitionColorProvider>
         <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
+        
+          <Routes location={location} key={location.pathname}>
             <Route path="/developer" element={<DeveloperPage />} />
             <Route path="/student" element={<StudentPage />} />
             <Route path="/clubs" element={<ClubsPage />} />
@@ -31,4 +32,4 @@ function App() {
   );
 }
 
-export default App; // Export the App component as the default export
+export default App;

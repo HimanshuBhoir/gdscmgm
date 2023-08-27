@@ -1,8 +1,9 @@
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
 import getRandomArbitrary from '../../../utils/getRandomArbitraryNumber';
 import styled from 'styled-components';
+import { BannerFooterLine } from '../../../Constants';
 
-const LETTERS = 'GDSC Yonsei Univ. Seoul Campus';
+const LETTERS = BannerFooterLine;
 
 function MainFooter() {
   return (
@@ -21,15 +22,6 @@ function MainFooter() {
           );
         })}
       </LeftEnd>
-      <RightEnd data-scroll data-scroll-position="top" data-scroll-speed="7">
-        <a
-          href="https://github.com/gdsc-ys/gdsc-ys.github.io"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <GithubIcon />
-        </a>
-      </RightEnd>
     </Container>
   );
 }
@@ -40,14 +32,14 @@ const Container = styled.footer`
   width: 100%;
   min-height: 50px;
 
-  padding: 0 20px;
+  padding: 0 15px;
   border-top: 1px solid #dadce0;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background-color: #f2f2f2;
+  background-color: #f8f8f8;
 
   font-family: 'Google Sans', sans-serif;
 `;
@@ -64,28 +56,13 @@ const LeftEnd = styled.div`
 const LeftSpan = styled.span`
   display: inline-block;
 
-  font-size: 20px;
+  font-size: 18px;
   color: ${(props) => props.theme.backgroundColor.black};
 
   white-space: pre;
   letter-spacing: 0.3px;
 
   ${({ theme }) => theme.mobile`
-    font-size: 16px;
+    font-size: 12px;
   `}
-`;
-
-const RightEnd = styled.div`
-  margin-right: 20px;
-
-  background-color: transparent;
-
-  ${({ theme }) => theme.mobile`
-    margin-right: 12px;
-  `}
-`;
-
-const GithubIcon = styled(FaGithub)`
-  font-size: 20px;
-  color: black;
 `;

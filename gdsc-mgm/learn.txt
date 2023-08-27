@@ -1,4 +1,1 @@
-Lazy loading
-Locomotive Scroll : https://www.npmjs.com/package/react-locomotive-scroll
-MouseContext
-TransitionColorProvider Not working properly, still on pause
+Preloader Not working properly
