@@ -1,30 +1,18 @@
-import { DelayedLink } from '../../DelayedLink';
 import { DropdownIcon } from '../../DropdownIcon';
-import { TRANSITION_DURATION } from '../../../Constants';
-import { TransitionColorContext } from '../../../context/TransitionColorContext';
 import { useComponentVisible } from '../../../hooks';
 import DropdownList from '../../../pages/Home/Hero/components/DropdownList';
-import { useContext } from 'react';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 
 function MainHeader() {
   const { scroll } = useLocomotiveScroll();
   const { ref: outsideRef, isVisible, setIsVisible } = useComponentVisible();
-  const { transitionColorHandler } = useContext(TransitionColorContext);
-  const { color } = useTheme();
-
-  const handleLinkClick = () => {
-    transitionColorHandler(color.darkgrey);
-  };
 
   return (
     <>
       <Container data-scroll data-scroll-position="top" data-scroll-speed="0.1">
-        <LeftEnd onClick={handleLinkClick}>
-          <DelayedLink to={'/aboutUs'} delay={TRANSITION_DURATION}>
-            <LeftSpan>About us</LeftSpan>
-          </DelayedLink>
+        <LeftEnd>
+          <LeftSpan></LeftSpan>
         </LeftEnd>
         <RightEnd>
           <DropdownIcon setIsVisible={setIsVisible} />

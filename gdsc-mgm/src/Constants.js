@@ -41,3 +41,9 @@ export const Page404Line3 = "Take me to the Place";
 export const SearchBarLine = "best GDSC near me?";
 export const BannerFooterLine = "GDSC MGMCET, Navi Mumbai";
 export const SubHeaderLine = "GDSC MGMCET 2023-24";
+
+// Links
+
+export const LinkedInGDSCMGMCET = "https://www.linkedin.com/in/himanshu-bhoir-34a9a01b9/";
+export const GithubGDSCMGMCET = "https://www.linkedin.com/in/himanshu-bhoir-34a9a01b9/";
+export const InstagramGDSCMGMCET = "https://www.linkedin.com/in/himanshu-bhoir-34a9a01b9/";

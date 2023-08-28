@@ -28,11 +28,9 @@ function Hero() {
       if (GDSC_PAGES.includes(prevRoute)) {
         if (isSmallerLaptop) {
           const pageIndex = GDSC_PAGES.indexOf(prevRoute);
-
           scroll.scrollTo(GDSC_SCROLL_TARGET[pageIndex], { duration: 0, disableLerp: false });
           return;
         }
-
         scroll.scrollTo('bottom', { duration: 0, disableLerp: false });
       }
     }

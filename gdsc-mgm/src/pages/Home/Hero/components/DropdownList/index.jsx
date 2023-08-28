@@ -4,6 +4,7 @@ import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import DropdownMenu from '../DropdownMenu';
+import { GithubGDSCMGMCET, InstagramGDSCMGMCET, LinkedInGDSCMGMCET } from '../../../../../Constants';
 
 function DropdownList() {
   return (
@@ -11,13 +12,18 @@ function DropdownList() {
       <Menus>
         <DropdownMenu
           Icon={<NotionIcon />}
-          description={'GDSC Notion'}
-          href={'https://gdsc-yonsei.notion.site/'}
+          description={'LinkedIn'}
+          href={LinkedInGDSCMGMCET}
         />
         <DropdownMenu
           Icon={<GithubIcon />}
-          description={'GDSC Github'}
-          href={'https://github.com/gdsc-ys'}
+          description={'Github'}
+          href={GithubGDSCMGMCET}
+        />
+        <DropdownMenu
+          Icon={<GithubIcon />}
+          description={'Instagram'}
+          href={InstagramGDSCMGMCET}
         />
       </Menus>
     </Container>
