@@ -4,14 +4,14 @@ import { memo, useCallback, useContext } from 'react';
 import TextTransition from 'react-text-transition';
 import styled from 'styled-components';
 
-function LeadMemberCard({ upperLetter, lowerLetter, githubID }) {
+function LeadMemberCard({ upperLetter, lowerLetter, linkedinID }) {
   const [hoverRef, isHovered] = useHover();
   const { cursorChangeHandler } = useContext(MouseContext);
 
-  const names = [lowerLetter, `@${githubID}`];
+  const names = [lowerLetter, `@${linkedinID}`];
 
-  const cursorChangeGithubHandler = useCallback(() => {
-    cursorChangeHandler('Github');
+  const cursorChangeLinkedInHandler = useCallback(() => {
+    cursorChangeHandler('LinkedIn');
   }, [cursorChangeHandler]);
 
   const cursorChangeEmptyHandler = useCallback(() => {
@@ -21,10 +21,10 @@ function LeadMemberCard({ upperLetter, lowerLetter, githubID }) {
   return (
     <Container
       ref={hoverRef}
-      href={`https://github.com/${githubID}`}
+      href={`https://linkedin.com/in/${linkedinID}`}
       target="_blank"
       rel="noreferrer noopener nofollow"
-      onMouseEnter={cursorChangeGithubHandler}
+      onMouseEnter={cursorChangeLinkedInHandler}
       onMouseLeave={cursorChangeEmptyHandler}
     >
       <UpperContainer>

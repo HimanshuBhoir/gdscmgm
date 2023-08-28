@@ -104,8 +104,8 @@ function MemberSection() {
           <div ref={leadCardRef}>
               <LeadMemberCard
                 upperLetter={'GDSC Lead'}
-                lowerLetter={'Kiung Jung'}
-                githubID={'Quqqu'}
+                lowerLetter={'Sahil Ambure'}
+                linkedinID={'ambures'}
               />
           </div>
           <HorizontalLineWrapper>
@@ -122,7 +122,7 @@ function MemberSection() {
                     key={idx}
                     upperLetter={el.upperLetter}
                     lowerLetter={el.lowerLetter}
-                    githubID={el.githubID}
+                    linkedinID={el.linkedinID}
                   />
               );
             })}
@@ -141,7 +141,7 @@ function MemberSection() {
                     key={idx}
                     upperLetter={el.upperLetter}
                     lowerLetter={el.lowerLetter}
-                    githubID={el.githubID}
+                    linkedinID={el.linkedinID}
                   />
               );
             })}

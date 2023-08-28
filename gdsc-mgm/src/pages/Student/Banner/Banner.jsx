@@ -1,7 +1,7 @@
 import { BannerTextAnimation } from '../../../components/Animation/BannerTextAnimation';
 import { BannerTextAnimationFirefox } from '../../../components/Animation/BannerTextAnimationFirefox';
 import { DelayedLink } from '../../../components/DelayedLink';
-import OdessaDoodle from '../../../components/Doodle/OdessaDoodle';
+import BlossomDoodle from '../../../components/Doodle/BlossomDoodle';
 import { TRANSITION_DURATION, TRANSITION_DURATION_DELAY } from '../../../constants/constants';
 import { useRef } from 'react';
 import styled from 'styled-components';
@@ -48,7 +48,7 @@ function Banner() {
           </TextAnimationContainer>
         </TextSection>
         <CanvasSection>
-          <OdessaDoodle ref={doodleRef} shapeFrequency={0.5} />
+          <BlossomDoodle ref={doodleRef} shapeFrequency={0.5} />
         </CanvasSection>
       </BodySection>
     </HeadingSection>

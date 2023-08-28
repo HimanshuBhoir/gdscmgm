@@ -1,16 +1,15 @@
 import { BannerTextAnimation } from '../../../components/Animation/BannerTextAnimation';
 import { BannerTextAnimationFirefox } from '../../../components/Animation/BannerTextAnimationFirefox';
 import { DelayedLink } from '../../../components/DelayedLink';
-import { TerrainDoodle } from '../../../components/Doodle';
+import BlossomDoodle from '../../../components/Doodle/BlossomDoodle';
 import { TRANSITION_DURATION, TRANSITION_DURATION_DELAY } from '../../../constants/constants';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import styled from 'styled-components';
 
 function Banner() {
-  const doodleRef = useRef(null);
-
   const animationDelaySeconds = TRANSITION_DURATION_DELAY * 0.001;
+  const doodleRef = useRef(null);
 
   const onClickHeadingSection = () => {
     doodleRef.current.update();
@@ -45,7 +44,7 @@ function Banner() {
           </TextAnimationContainer>
         </TextSection>
         <CanvasSection>
-          <TerrainDoodle ref={doodleRef} shapeFrequency={0.8} lineFrequency={0.4} />
+          <BlossomDoodle ref={doodleRef} shapeFrequency={0.8} lineFrequency={0.4} />
         </CanvasSection>
       </BodySection>
     </HeadingSection>
