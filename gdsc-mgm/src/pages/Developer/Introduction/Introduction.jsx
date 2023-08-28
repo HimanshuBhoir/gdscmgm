@@ -11,7 +11,7 @@ function Introduction() {
       <TitleWrapper data-scroll data-scroll-speed="1">
         <Title>
           We Have&nbsp;
-          <Green>3 Study Jams&nbsp;</Green>Organized.
+          <Green>3 Study Jams</Green> Organized.
         </Title>
       </TitleWrapper>
       <JamsContainer hoveredSection={hoveredSection}>

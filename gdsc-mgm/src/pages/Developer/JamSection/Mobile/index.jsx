@@ -2,7 +2,7 @@ import { ReactComponent as SiDart } from '../../../../assets/images/icons/mobile
 import { ReactComponent as SiFirebase } from '../../../../assets/images/icons/mobile/firebase.svg';
 import { ReactComponent as SiFlutter } from '../../../../assets/images/icons/mobile/flutter.svg';
 import { ReactComponent as SiUIKit } from '../../../../assets/images/icons/mobile/uikit.svg';
-// Icon Import
+import { SiAndroidstudio } from '@react-icons/all-files/si/SiAndroidstudio';
 import { ReactComponent as SiSwift } from '../../../../assets/images/icons/swift.svg';
 import { useOnScreen } from '../../../../hooks';
 import { useRef } from 'react';
@@ -10,15 +10,11 @@ import { Tooltip } from 'react-tooltip';
 import { TypeAnimation } from 'react-type-animation';
 import styled from 'styled-components';
 
-import GithubMenu from './GithubMenu';
-
 function MobileSection() {
   const observerRef = useRef(null);
   const observerRefSecond = useRef(null);
-  const observerRefThird = useRef(null);
   const onScreen = useOnScreen(observerRef);
   const onScreenSecond = useOnScreen(observerRefSecond);
-  const onScreenThird = useOnScreen(observerRefThird);
 
   const setTooltip = (content) => {
     return {
@@ -38,7 +34,7 @@ function MobileSection() {
             data-scroll-sticky
             data-scroll-target="#fixed-element-mobile"
           >
-            <H1>03.</H1>
+            <H1>02.</H1>
             <H2>Mobile Development</H2>
             <Paragraph>
               Hand-held mobile smartphones & devices have become more accessible than ever before,
@@ -63,7 +59,6 @@ function MobileSection() {
               <List>Develop modern mobile application using Flutter & Swift.</List>
               <List>Write API to support native mobile functionality.</List>
               <List>Build interfaces with rich UI / UX.</List>
-              <List>Monitor the application CI / CD and track ongoing releases.</List>
             </LearnList>
           </SectionWrapper>
           <SectionWrapper ref={observerRefSecond} id="mobile-section-wrapper-second">
@@ -95,34 +90,9 @@ function MobileSection() {
                 <SiUIKit {...setTooltip('UIKit')} />
                 <SiFlutter {...setTooltip('Flutter')} />
                 <SiFirebase {...setTooltip('Firebase')} />
+                <SiAndroidstudio {...setTooltip('Android Studio')} />
               </IconWrapper>
             </IconList>
-          </SectionWrapper>
-          <SectionWrapper ref={observerRefThird} id="mobile-section-wrapper-third">
-            <TitleWrapperThird
-              data-scroll
-              data-scroll-sticky
-              data-scroll-target="#mobile-section-wrapper-third"
-            >
-              {onScreenThird && (
-                <TypeAnimation
-                  sequence={["What we've done"]}
-                  speed={50}
-                  wrapper={'span'}
-                  repeat={1}
-                />
-              )}
-            </TitleWrapperThird>
-            <GithubList>
-              <GithubMenu
-                title={'Fridge Share App'}
-                type="Flutter"
-                description={
-                  'Fridge Sharing managing mobile app. GDSC - YS believes the power of beneficial positive impact on society.'
-                }
-                link="https://github.com/gdsc-ys/share-fridge-flutter"
-              />
-            </GithubList>
           </SectionWrapper>
         </RightSection>
       </ContentWrapper>
@@ -345,22 +315,4 @@ const IconWrapper = styled.div`
       }
     }
   }
-`;
-
-const TitleWrapperThird = styled(TitleWrapper)`
-  span {
-    font-size: 5.5vw;
-  }
-`;
-
-const GithubList = styled.ul`
-  width: 100%;
-
-  padding: 5% 10%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5vh;
 `;

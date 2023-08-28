@@ -1,5 +1,5 @@
 import { DelayedLink } from '../../../components/DelayedLink';
-import { TRANSITION_DURATION } from '../../../Constants';
+import { TRANSITION_DURATION } from '../../../constants/constants';
 import { HiOutlineArrowLeft } from '@react-icons/all-files/hi/HiOutlineArrowLeft';
 import styled from 'styled-components';
 

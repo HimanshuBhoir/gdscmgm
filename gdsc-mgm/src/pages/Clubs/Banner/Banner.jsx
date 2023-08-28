@@ -2,7 +2,7 @@ import { BannerTextAnimation } from '../../../components/Animation/BannerTextAni
 import { BannerTextAnimationFirefox } from '../../../components/Animation/BannerTextAnimationFirefox';
 import { DelayedLink } from '../../../components/DelayedLink';
 import { TerrainDoodle } from '../../../components/Doodle';
-import { TRANSITION_DURATION, TRANSITION_DURATION_DELAY } from '../../../Constants';
+import { TRANSITION_DURATION, TRANSITION_DURATION_DELAY } from '../../../constants/constants';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import styled from 'styled-components';
@@ -41,7 +41,7 @@ function Banner() {
             <BodySpanLarge>Google</BodySpanLarge>
           </TextAnimationContainer>
           <TextAnimationContainer delay={animationDelaySeconds + 0.4}>
-            <BodySpan>Yonsei Club</BodySpan>
+            <BodySpan>MGMCET GDSC Club</BodySpan>
           </TextAnimationContainer>
         </TextSection>
         <CanvasSection>
@@ -145,8 +145,8 @@ const BodySpanLarge = styled.span`
 
 const BodySpan = styled.span`
   display: inline-block;
-  font-size: 6.3vw;
-  font-weight: 400;
+  font-size: 4.5vw;
+  font-weight: 300;
 
   line-height: 1.1;
   color: ${(props) => props.theme.backgroundColor.black};

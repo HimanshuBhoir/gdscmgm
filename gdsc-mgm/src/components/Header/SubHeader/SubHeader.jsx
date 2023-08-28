@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SubHeaderLine } from '../../../Constants';
+import { SubHeaderLine } from '../../../constants/constants';
 
 function SubHeader() {
   return (

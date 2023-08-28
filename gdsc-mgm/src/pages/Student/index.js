@@ -1,4 +1,4 @@
-import { GithubCursor } from '../../components/GithubCursor';
+import { LinkedInCursor } from '../../components/LinkedInCursor';
 import { LoadingScreen } from '../../components/LoadingScreen';
 import { LocomotiveScrollProvider, MouseContextProvider } from '../../context';
 import { TransitionColorContext } from '../../context/TransitionColorContext';
@@ -28,7 +28,7 @@ function StudentPage() {
           <Banner />
           <MouseContextProvider>
             <MemberSection />
-            {isMobileOrTablet ? null : <GithubCursor />}
+            {isMobileOrTablet ? null : <LinkedInCursor />}
           </MouseContextProvider>
         </Container>
       </LocomotiveScrollProvider.Vertical>

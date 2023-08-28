@@ -1,15 +1,9 @@
 import 'react-tooltip/dist/react-tooltip.css';
 
-import { ReactComponent as SiElectronJS } from '../../../../assets/images/icons/web/electron.svg';
-import { ReactComponent as SiNextJS } from '../../../../assets/images/icons/web/nextdotjs.svg';
 import { ReactComponent as SiNodeJS } from '../../../../assets/images/icons/web/nodedotjs.svg';
-import { ReactComponent as SiReactQuery } from '../../../../assets/images/icons/web/reactquery.svg';
-import { ReactComponent as SiReactTable } from '../../../../assets/images/icons/web/reacttable.svg';
-import { ReactComponent as SiReduxSaga } from '../../../../assets/images/icons/web/reduxsaga.svg';
-import { ReactComponent as SiSass } from '../../../../assets/images/icons/web/sass.svg';
 import { ReactComponent as SiStyledComponents } from '../../../../assets/images/icons/web/styledcomponents.svg';
-import { ReactComponent as SiThreeJS } from '../../../../assets/images/icons/web/threedotjs.svg';
 import { ReactComponent as SiVite } from '../../../../assets/images/icons/web/vite.svg';
+import { ReactComponent as SiTalwind } from '../../../../assets/images/icons/web/tailwind-css-icon.svg';
 import { useOnScreen } from '../../../../hooks';
 import { SiAngular } from '@react-icons/all-files/si/SiAngular';
 import { SiBabel } from '@react-icons/all-files/si/SiBabel';
@@ -20,23 +14,17 @@ import { SiNpm } from '@react-icons/all-files/si/SiNpm';
 import { SiReact } from '@react-icons/all-files/si/SiReact';
 import { SiRedux } from '@react-icons/all-files/si/SiRedux';
 import { SiTypescript } from '@react-icons/all-files/si/SiTypescript';
-import { SiVueDotJs } from '@react-icons/all-files/si/SiVueDotJs';
 import { SiWebpack } from '@react-icons/all-files/si/SiWebpack';
-import { SiYarn } from '@react-icons/all-files/si/SiYarn';
 import { useRef } from 'react';
 import { Tooltip } from 'react-tooltip';
 import { TypeAnimation } from 'react-type-animation';
 import styled from 'styled-components';
 
-import GithubMenu from './GithubMenu';
-
 function WebSection() {
   const observerRef = useRef(null);
   const observerRefSecond = useRef(null);
-  const observerRefThird = useRef(null);
   const onScreen = useOnScreen(observerRef);
   const onScreenSecond = useOnScreen(observerRefSecond);
-  const onScreenThird = useOnScreen(observerRefThird);
 
   const setTooltip = (content) => {
     return {
@@ -78,7 +66,6 @@ function WebSection() {
               <List>Develop user-friendly UI/UX wireframes for various devices.</List>
               <List>Consider creative interaction with various browser events.</List>
               <List>Write Unit / UI tests to identify errors and malfunctions.</List>
-              <List>Conduct research about modern SPA frameworks & libraries.</List>
               <List>Optimize code for providing faster user experience.</List>
               <List>Understand the process between client-server architecture.</List>
               <List>Study component-based state management and data binding.</List>
@@ -103,34 +90,25 @@ function WebSection() {
               <IconName>Languages</IconName>
               <IconWrapper>
                 {/* FIXME: Why not fill color props? */}
-                <SiHtml5 {...setTooltip('HTML5')} />
-                <SiCss3 {...setTooltip('CSS3')} />
+                <SiHtml5 {...setTooltip('HTML')} />
+                <SiCss3 {...setTooltip('CSS')} />
                 <SiJavascript {...setTooltip('JavaScript')} />
                 <SiTypescript {...setTooltip('TypeScript')} />
               </IconWrapper>
               <IconWrapper>
-                <SiSass {...setTooltip('SASS')} />
                 <SiStyledComponents {...setTooltip('Styled-Components')} />
+                <SiTalwind {...setTooltip('Tailwind Css')} />
               </IconWrapper>
             </IconList>
             <IconList>
               <IconName>Frameworks & Libraries</IconName>
               <IconWrapper>
                 <SiReact {...setTooltip('React')} />
-                <SiNextJS {...setTooltip('Next.js')} />
-                <SiNodeJS {...setTooltip('NodeJS')} />
-                <SiVueDotJs {...setTooltip('Vue.js')} />
-              </IconWrapper>
-              <IconWrapper>
                 <SiAngular {...setTooltip('Angular')} />
-                <SiRedux {...setTooltip('Redux')} />
-                <SiReduxSaga {...setTooltip('Redux-Saga')} />
-                <SiReactQuery {...setTooltip('React-Query')} />
+                <SiNodeJS {...setTooltip('NodeJS')} />
               </IconWrapper>
               <IconWrapper>
-                <SiReactTable {...setTooltip('React-Table')} />
-                <SiThreeJS {...setTooltip('Three.js')} />
-                <SiElectronJS {...setTooltip('Electron.js')} />
+                <SiRedux {...setTooltip('Redux')} />
               </IconWrapper>
             </IconList>
             <IconList>
@@ -145,65 +123,8 @@ function WebSection() {
               <IconName>Package Manager</IconName>
               <IconWrapper>
                 <SiNpm {...setTooltip('npm')} />
-                <SiYarn {...setTooltip('Yarn')} />
               </IconWrapper>
             </IconList>
-          </SectionWrapper>
-          <SectionWrapper ref={observerRefThird} id="web-section-wrapper-third">
-            <TitleWrapperThird
-              data-scroll
-              data-scroll-sticky
-              data-scroll-target="#web-section-wrapper-third"
-            >
-              {onScreenThird && (
-                <TypeAnimation
-                  sequence={["What we've done"]}
-                  speed={50}
-                  wrapper={'span'}
-                  repeat={1}
-                />
-              )}
-            </TitleWrapperThird>
-            <GithubList>
-              <GithubMenu
-                title={'DOM Visualizer'}
-                type="Github"
-                description={
-                  'Parsing HTML to Virtual DOM Tree. Written in JavaScript & TypeScript without DOMParser API. Features automatic error checking and tree creation animation.'
-                }
-                link="https://mumwa.github.io/dom-visualizer/"
-              />
-              <GithubMenu
-                title={'Magic-boolean-conch'}
-                type="Npm"
-                description={
-                  'NPM package that returns random boolean or undefined type. Grab it if you needed. :)'
-                }
-                link="https://www.npmjs.com/package/magic-boolean-conch"
-              />
-              <GithubMenu
-                title={'React-moar-table'}
-                type="Npm"
-                description={
-                  'Customized react table component with other features included. Best choice if you need lightweight & fully-functional table component.'
-                }
-                link="https://www.npmjs.com/package/magic-boolean-conch"
-              />
-              <GithubMenu
-                title={'Model Curation'}
-                type="Npm"
-                description={
-                  'Utilizing three.js, displaying 3d model in website with this package comes in handy.'
-                }
-                link="https://www.npmjs.com/package/model-curation"
-              />
-              <GithubMenu
-                title={'Course Apply Webpage'}
-                type="Github"
-                description={'Mock Yonsei Univ. Course Apply Webpage.'}
-                link="https://github.com/gdsc-ys/left-web-sprint-courseapply"
-              />
-            </GithubList>
           </SectionWrapper>
         </RightSection>
       </ContentWrapper>
@@ -427,22 +348,4 @@ const IconWrapper = styled.div`
       }
     }
   }
-`;
-
-const TitleWrapperThird = styled(TitleWrapper)`
-  span {
-    font-size: 5.5vw;
-  }
-`;
-
-const GithubList = styled.ul`
-  width: 100%;
-
-  padding: 5% 10%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5vh;
 `;

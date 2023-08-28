@@ -6,7 +6,7 @@ function Head() {
 
   return (
     <Helmet prioritizeSeoTags>
-      {!idleState ? <title>GDSC - YS</title> : <title>👋 Are you there?</title>}
+      {!idleState ? <title>GDSC - MGMCET</title> : <title>👋 Are you there?</title>}
     </Helmet>
   );
 }

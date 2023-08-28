@@ -1,27 +1,28 @@
-import { ReactComponent as SiGithub } from '../../../../../assets/images/icons/github.svg';
-import { ReactComponent as SiNotion } from '../../../../../assets/images/icons/notion.svg';
+import { ReactComponent as IcGithub } from '../../../../../assets/images/icons/github.svg';
+import { ReactComponent as IcInstagram } from '../../../../../assets/images/icons/instagram.svg';
+import { ReactComponent as IcLinkedIn } from '../../../../../assets/images/icons/linkedin.svg';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import DropdownMenu from '../DropdownMenu';
-import { GithubGDSCMGMCET, InstagramGDSCMGMCET, LinkedInGDSCMGMCET } from '../../../../../Constants';
+import { GithubGDSCMGMCET, InstagramGDSCMGMCET, LinkedInGDSCMGMCET } from '../../../../../constants/constants';
 
 function DropdownList() {
   return (
     <Container>
       <Menus>
         <DropdownMenu
-          Icon={<NotionIcon />}
+          Icon={<IcLinkedIn />}
           description={'LinkedIn'}
           href={LinkedInGDSCMGMCET}
         />
         <DropdownMenu
-          Icon={<GithubIcon />}
+          Icon={<IcGithub />}
           description={'Github'}
           href={GithubGDSCMGMCET}
         />
         <DropdownMenu
-          Icon={<GithubIcon />}
+          Icon={<IcInstagram />}
           description={'Instagram'}
           href={InstagramGDSCMGMCET}
         />
@@ -64,20 +65,4 @@ const Menus = styled.ul`
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-`;
-
-const NotionIcon = styled(SiNotion)`
-  width: 36px;
-  height: 36px;
-  path {
-    fill: ${(props) => props.theme.backgroundColor.black};
-  }
-`;
-
-const GithubIcon = styled(SiGithub)`
-  width: 36px;
-  height: 36px;
-  path {
-    fill: ${(props) => props.theme.backgroundColor.black};
-  }
 `;

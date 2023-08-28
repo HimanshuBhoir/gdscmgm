@@ -101,6 +101,7 @@ const ImageSection = styled(motion.div)`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: cover;
 
   box-shadow: 0 0 0 10px ${(props) => props.theme.backgroundColor.white} inset;
 

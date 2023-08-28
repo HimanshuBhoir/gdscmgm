@@ -1,4 +1,4 @@
-import { TRANSITION_DURATION, TRANSITION_DURATION_DELAY } from '../../Constants';
+import { TRANSITION_DURATION, TRANSITION_DURATION_DELAY } from '../../constants/constants';
 import { TransitionColorContext } from '../../context/TransitionColorContext';
 import { motion, useIsPresent } from 'framer-motion';
 import { useContext } from 'react';

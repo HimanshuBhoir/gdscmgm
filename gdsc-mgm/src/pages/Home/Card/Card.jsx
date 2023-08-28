@@ -1,6 +1,6 @@
 import { DelayedLink } from '../../../components/DelayedLink';
 import { Doodle } from '../../../components/Doodle';
-import { TRANSITION_DURATION } from '../../../Constants';
+import { TRANSITION_DURATION } from '../../../constants/constants';
 import { TransitionColorContext } from '../../../context/TransitionColorContext';
 import { forwardRef, useContext } from 'react';
 import styled from 'styled-components';

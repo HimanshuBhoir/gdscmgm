@@ -11,7 +11,7 @@ export const JamList = [
   {
     icon: <VscDeviceMobile />,
     description: 'App Development',
-    scrollTarget: '#fixed-element-server',
+    scrollTarget: '#fixed-element-mobile',
   },
   {
     icon: <GiProcessor />,

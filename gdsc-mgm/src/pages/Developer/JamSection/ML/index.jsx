@@ -2,25 +2,18 @@ import { ReactComponent as SiJupyter } from '../../../../assets/images/icons/ML/
 import { ReactComponent as SiNumpy } from '../../../../assets/images/icons/ML/numpy.svg';
 import { ReactComponent as SiPandas } from '../../../../assets/images/icons/ML/pandas.svg';
 import { ReactComponent as SiPytorch } from '../../../../assets/images/icons/ML/pytorch.svg';
-import { ReactComponent as SiSklearn } from '../../../../assets/images/icons/ML/scikitlearn.svg';
 import { ReactComponent as SiTensorflow } from '../../../../assets/images/icons/ML/tensorflow.svg';
-// Icon Import
 import { ReactComponent as SiPython } from '../../../../assets/images/icons/python.svg';
 import { useOnScreen } from '../../../../hooks';
 import { useRef } from 'react';
 import { Tooltip } from 'react-tooltip';
 import { TypeAnimation } from 'react-type-animation';
 import styled from 'styled-components';
-
-import GithubMenu from './GithubMenu';
-
 function MLSection() {
   const observerRef = useRef(null);
   const observerRefSecond = useRef(null);
-  const observerRefThird = useRef(null);
   const onScreen = useOnScreen(observerRef);
   const onScreenSecond = useOnScreen(observerRefSecond);
-  const onScreenThird = useOnScreen(observerRefThird);
 
   const setTooltip = (content) => {
     return {
@@ -36,12 +29,12 @@ function MLSection() {
       <ContentWrapper id="fixed-element-ML">
         <LeftSection>
           <OutlineContainer data-scroll data-scroll-sticky data-scroll-target="#fixed-element-ML">
-            <H1>04.</H1>
-            <H2>Artificial Intelligence</H2>
+            <H1>03.</H1>
+            <H2>Artificial Intelligence / Machine Learning</H2>
             <Paragraph>
-              State-of-the-art technology is here. At the forefront of the future IT industry, GDSC
-              - YS ML study jam pursues the best and the finest model training and model services
-              for customized needs.
+            Presenting cutting-edge technology at the forefront of the IT industry's evolution. <br />
+            Our ML study jam prioritizes top-tier model training and customized services, defining new 
+            standards of excellence.
             </Paragraph>
           </OutlineContainer>
         </LeftSection>
@@ -95,50 +88,10 @@ function MLSection() {
               <IconWrapper>
                 <SiPytorch {...setTooltip('Pytorch')} />
                 <SiTensorflow {...setTooltip('TensorFlow')} />
-                <SiSklearn {...setTooltip('Sklearn')} />
               </IconWrapper>
             </IconList>
           </SectionWrapper>
-          <SectionWrapper ref={observerRefThird} id="ml-section-wrapper-third">
-            <TitleWrapperThird
-              data-scroll
-              data-scroll-sticky
-              data-scroll-target="#ml-section-wrapper-third"
-            >
-              {onScreenThird && (
-                <TypeAnimation
-                  sequence={["What we've done"]}
-                  speed={50}
-                  wrapper={'span'}
-                  repeat={1}
-                />
-              )}
-            </TitleWrapperThird>
-            <GithubList>
-              <GithubMenu
-                title={'CoCa : Contrastive Captioners'}
-                type="Paper"
-                description={
-                  'A minimalist design to pretrain an image-text encoder-decoder foundation model jointly with contrastive loss and captioning loss'
-                }
-                link="https://arxiv.org/abs/2205.01917"
-              />
-              <GithubMenu
-                title={'Transformers : Attention Is All You Need'}
-                type="Paper"
-                description={
-                  'Transformer model using the attention mechanism, which has become a popular choice for sequence processing tasks in natural language processing.'
-                }
-                link="https://arxiv.org/abs/1706.03762"
-              />
-              <GithubMenu
-                title={'Pytorch Deep Dive'}
-                type="Github"
-                description={'Inspection on "de facto" Pytorch template.'}
-                link="https://github.com/victoresque/pytorch-template"
-              />
-            </GithubList>
-          </SectionWrapper>
+          
         </RightSection>
       </ContentWrapper>
       <Tooltip id="ml-tooltip" />
@@ -360,22 +313,4 @@ const IconWrapper = styled.div`
       }
     }
   }
-`;
-
-const TitleWrapperThird = styled(TitleWrapper)`
-  span {
-    font-size: 5.5vw;
-  }
-`;
-
-const GithubList = styled.ul`
-  width: 100%;
-
-  padding: 5% 10%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5vh;
 `;

@@ -1,7 +1,7 @@
 import DinosaurGif from '../../assets/images/notsensible.gif';  // Import the DinosaurGif image
 import { Link } from 'react-router-dom';  // Import the Link component from 'react-router-dom'
 import styled from 'styled-components';  // Import the styled-components library
-import { Page404Line1, Page404Line2, Page404Line3 } from '../../Constants';
+import { Page404Line1, Page404Line2, Page404Line3 } from '../../constants/constants';
 
 function Page404() {
   return (
@@ -47,7 +47,7 @@ const DinosaurImage = styled.img`
 `;
 
 const H1 = styled.h1`
-  font-size: 80px;
+  font-size: 70px;
   margin-bottom: 1.5vh;
 
   ${({ theme }) => theme.mobile`

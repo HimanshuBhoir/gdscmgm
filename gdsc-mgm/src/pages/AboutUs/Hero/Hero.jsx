@@ -24,20 +24,9 @@ function Hero() {
         </TextSection>
       </MainWrapper>
       <TextWrapper>
-        <H1>Welcome to GDSC Yonsei!</H1>
+        <H1>Welcome to GDSC MGMCET!</H1>
         <P>
-          Google Developer Student Clubs (GDSC) are community groups designed to help students
-          develop leadership and development skills. Students participate in events hosted by
-          Google, meet engineers on the job, and demonstrate their skills. <br /> <br />
-          Further, various educational materials and activities are given to support the development
-          of their technological skills. <br /> <br />
-          As a member of the GDSC, students build their knowledge through peer-to-peer learning and
-          put theory into practice through the development of solutions based on community needs. In
-          addition to contributing to the UN Sustainable Development Goals and addressing climate
-          issues, GDSC leaders are developing valuable coding skills and making a real difference.
-          <br /> <br />
-          Come join us for various projects that will shape the society, and fun activities that
-          will enrich your college experience!
+        Ignite Your Tech Passion with MGM CET's GDSC Chapter! Join our pixel-powered party, where bugs are just disco lights and code is the dance floor. Let's geek out, create wonders, and sprinkle a little coding stardust together! 🎉 Let's turn bugs into features and errors into laughter – welcome to MGM CET's GDSC Chapter.👾
         </P>
       </TextWrapper>
       <BackgroundVideo />

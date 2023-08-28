@@ -1,4 +1,4 @@
-import { STUDENTS_PROGRESS_UPPER_LIMIT } from '../../../../Constants';
+import { STUDENTS_PROGRESS_UPPER_LIMIT } from '../../../../constants/constants';
 import { useLocomotiveScrollPosition, useWindowSize } from '../../../../hooks';
 import clamp from '../../../../utils/clamp';
 import { memo, useCallback } from 'react';

@@ -3,7 +3,7 @@ import { Button } from '../../../../components/Button';
 import { MdSearch } from '@react-icons/all-files/md/MdSearch';
 import { TypeAnimation } from 'react-type-animation';
 import styled from 'styled-components';
-import { SearchBarLine } from '../../../../Constants';
+import { CommunityPage, GDSCMGMCET, SearchBarLine } from '../../../../constants/constants';
 
 function NavigationSection() {
   return (
@@ -27,7 +27,7 @@ function NavigationSection() {
       </NavbarContainer>
       <ButtonContainer data-scroll-section>
         <a
-          href="https://www.google.com/search?q=gdsc+yonsei+seoul+campus"
+          href={GDSCMGMCET}
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -36,7 +36,7 @@ function NavigationSection() {
           </StyledButton>
         </a>
         <a
-          href="https://gdsc.community.dev/yonsei-university-seoul-campus/"
+          href={CommunityPage}
           target="_blank"
           rel="noreferrer noopener"
         >

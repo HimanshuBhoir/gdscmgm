@@ -2,7 +2,7 @@ import { BannerTextAnimation } from '../../../components/Animation/BannerTextAni
 import { BannerTextAnimationFirefox } from '../../../components/Animation/BannerTextAnimationFirefox';
 import { DelayedLink } from '../../../components/DelayedLink';
 import OdessaDoodle from '../../../components/Doodle/OdessaDoodle';
-import { TRANSITION_DURATION, TRANSITION_DURATION_DELAY } from '../../../Constants';
+import { TRANSITION_DURATION, TRANSITION_DURATION_DELAY } from '../../../constants/constants';
 import { useRef } from 'react';
 import styled from 'styled-components';
 

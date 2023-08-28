@@ -12,12 +12,22 @@ function MainHeader() {
     <>
       <Container data-scroll data-scroll-position="top" data-scroll-speed="0.1">
         <LeftEnd>
-          <LeftSpan></LeftSpan>
+          <LeftSpan>
+          <LeftGmailButton>
+            Gmail
+          </LeftGmailButton>
+          </LeftSpan>
         </LeftEnd>
         <RightEnd>
+          <GmailButton>
+            Gmail
+          </GmailButton>
+          <ImagesButton >
+            Images
+          </ImagesButton>
           <DropdownIcon setIsVisible={setIsVisible} />
-          <LoginButton
-            className="Login"
+          <SinginButton
+            className="Singin"
             onClick={() => {
               scroll.scrollTo('bottom', {
                 duration: 600,
@@ -25,8 +35,8 @@ function MainHeader() {
               });
             }}
           >
-            Login
-          </LoginButton>
+            Signin
+          </SinginButton>
         </RightEnd>
       </Container>
       <div ref={outsideRef}>{isVisible && <DropdownList />}</div>
@@ -52,8 +62,6 @@ const LeftEnd = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
-
-  margin-left: 20px;
 `;
 
 const LeftSpan = styled.span`
@@ -71,7 +79,7 @@ const RightEnd = styled.div`
   gap: 16px;
 `;
 
-const LoginButton = styled.button`
+const SinginButton = styled.button`
   box-sizing: border-box;
   width: 80px;
   height: 36px;
@@ -91,4 +99,62 @@ const LoginButton = styled.button`
   border-radius: 4px;
 
   cursor: pointer;
+`;
+
+const GmailButton = styled.button`
+
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  line-height: 10px;
+  vertical-align: middle;
+
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  ${({ theme }) => theme.mobile`
+    display: none;
+  `}
+
+`;
+
+const ImagesButton = styled.button`
+
+white-space: nowrap;
+font-size: 14px;
+font-weight: 400;
+letter-spacing: 0.25px;
+line-height: 10px;
+vertical-align: middle;
+
+border: none;
+background: none;
+cursor: pointer;
+
+${({ theme }) => theme.mobile`
+    display: none;
+  `}
+
+`;
+
+const LeftGmailButton = styled.button`
+
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  line-height: 10px;
+  vertical-align: middle;
+
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+
+  ${({ theme }) => theme.mobile`
+    display: block;
+  `}
+
 `;
