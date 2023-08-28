@@ -6,7 +6,7 @@
 .pnp.js
 
 # processing
-/pages/Student
+src/pages/Student
 
 # testing
 /coverage
