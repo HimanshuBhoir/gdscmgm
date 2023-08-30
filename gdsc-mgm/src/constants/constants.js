@@ -21,15 +21,6 @@ export const STUDENTS_PROGRESS_UPPER_LIMIT = 6500;
 export const startLine = "We are GDSC 23-24 @ MGMCET";
 export const baseLine = "GDSC-MGMCET 2023-24"
 
-// Online Links to connect
-
-export const LINKEDIN = "https://github.com/HimanshuBhoir";
-export const INSTAGRAM = "https://github.com/HimanshuBhoir";
-export const GITHUB = "https://github.com/HimanshuBhoir";
-export const COM_PAGE = "https://github.com/HimanshuBhoir";
-export const JOIN_COM = "https://github.com/HimanshuBhoir";
-
-
 // Page 404 Lines
 
 export const Page404Line1 = "Not Sensible, Right?";
@@ -40,11 +31,11 @@ export const Page404Line3 = "Take me to the Place";
 
 export const SearchBarLine = "Best GDSC near me?";
 export const SubHeaderLine = "GDSC MGMCET 2023-24";
-export const GDSCMGMCET = "https://www.linkedin.com/in/himanshu-bhoir-34a9a01b9/";
-export const CommunityPage = "https://www.linkedin.com/in/himanshu-bhoir-34a9a01b9/";
 
 // Links
 
 export const LinkedInGDSCMGMCET = "https://www.linkedin.com/in/himanshu-bhoir-34a9a01b9/";
 export const GithubGDSCMGMCET = "https://www.linkedin.com/in/himanshu-bhoir-34a9a01b9/";
 export const InstagramGDSCMGMCET = "https://www.linkedin.com/in/himanshu-bhoir-34a9a01b9/";
+export const GmailGDSCMGMCET = "himanshubhoir25@gmail.com";
+export const CommunityPageGDSCMGMCET = "https://gdsc.community.dev/mgms-college-of-engineering-and-technology-navi-mumbai/";

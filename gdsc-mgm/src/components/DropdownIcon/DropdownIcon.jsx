@@ -34,7 +34,6 @@ const Container = styled.div`
 
   cursor: pointer;
   transition: background-color 0.2s ease-in;
-  background-color: transparent;
 
   position: relative;
 
@@ -57,13 +56,13 @@ const Wrapper = styled.div`
 const CircleWrapper = styled.div`
   width: 100%;
   height: 100%;
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const MiniCircle = styled.div`
+  `;
+  
+  const MiniCircle = styled.div`
   width: 4px;
   height: 4px;
   border-radius: 50%;

@@ -1,29 +1,44 @@
+import { GmailGDSCMGMCET, TRANSITION_DURATION } from '../../../constants/constants';
+import { TransitionColorContext } from '../../../context/TransitionColorContext';
 import { DropdownIcon } from '../../DropdownIcon';
 import { useComponentVisible } from '../../../hooks';
 import DropdownList from '../../../pages/Home/Hero/components/DropdownList';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
+import { useContext } from 'react';
+import { DelayedLink } from '../../DelayedLink';
 
 function MainHeader() {
   const { scroll } = useLocomotiveScroll();
   const { ref: outsideRef, isVisible, setIsVisible } = useComponentVisible();
+  const { transitionColorHandler } = useContext(TransitionColorContext);
+  const { color } = useTheme();
+  
+  const email = GmailGDSCMGMCET;
+  const subject = encodeURIComponent('GDSC-MGMCET Mail');
+  const mailtoLink = `mailto:${email}?subject=${subject}`;
+  
+  const handleLinkClick = () => {
+    transitionColorHandler(color.yellow);
+  };
+  
 
   return (
     <>
       <Container data-scroll data-scroll-position="top" data-scroll-speed="0.1">
         <LeftEnd>
-          <LeftSpan>
           <LeftGmailButton>
-            Gmail
+          <a href={mailtoLink}>Gmail</a>
           </LeftGmailButton>
-          </LeftSpan>
         </LeftEnd>
         <RightEnd>
           <GmailButton>
-            Gmail
+          <a href={mailtoLink}>Gmail</a>
           </GmailButton>
-          <ImagesButton >
-            Images
+          <ImagesButton onClick={handleLinkClick}>
+            <DelayedLink to={'/clubs'} delay={TRANSITION_DURATION}>
+              Images
+            </DelayedLink>
           </ImagesButton>
           <DropdownIcon setIsVisible={setIsVisible} />
           <SinginButton
@@ -64,19 +79,13 @@ const LeftEnd = styled.div`
   gap: 16px;
 `;
 
-const LeftSpan = styled.span`
-  font-size: 16px;
-  color: ${(props) => props.theme.color.darkgrey};
-  cursor: pointer;
-`;
-
 const RightEnd = styled.div`
-  padding: 0 10px;
+padding: 0 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 16px;
 `;
 
 const SinginButton = styled.button`
@@ -155,6 +164,7 @@ const LeftGmailButton = styled.button`
 
   ${({ theme }) => theme.mobile`
     display: block;
+    font-size: 12px;
   `}
 
 `;

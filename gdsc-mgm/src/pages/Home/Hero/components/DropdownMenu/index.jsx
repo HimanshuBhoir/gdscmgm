@@ -16,7 +16,7 @@ function DropdownMenu({ Icon, description, href }) {
 export default DropdownMenu;
 
 const MenuWrapper = styled.a`
-  width: 100%;
+  width: 95%;
 
   position: relative;
 
@@ -25,19 +25,18 @@ const MenuWrapper = styled.a`
   align-items: center;
   gap: 12px;
 
-  padding: 20px 10px;
+  padding: 10px 10px;
 
-  background-color: transparent;
+  // background-color: transparent;
   border-radius: 10px;
 
   cursor: pointer;
   text-decoration: none;
 
-  background-color: transparent;
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${(props) => props.theme.backgroundColor.lightgray};
+    background-color: ${(props) => props.theme.color.offwhite};
     svg {
       opacity: 1;
       transform: none;

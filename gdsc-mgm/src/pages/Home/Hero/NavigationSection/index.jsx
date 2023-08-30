@@ -3,7 +3,7 @@ import { Button } from '../../../../components/Button';
 import { MdSearch } from '@react-icons/all-files/md/MdSearch';
 import { TypeAnimation } from 'react-type-animation';
 import styled from 'styled-components';
-import { CommunityPage, GDSCMGMCET, SearchBarLine } from '../../../../constants/constants';
+import { CommunityPage, CommunityPageGDSCMGMCET, GDSCMGMCET, SearchBarLine } from '../../../../constants/constants';
 
 function NavigationSection() {
   return (
@@ -27,21 +27,25 @@ function NavigationSection() {
       </NavbarContainer>
       <ButtonContainer data-scroll-section>
         <a
-          href={GDSCMGMCET}
+          href={CommunityPageGDSCMGMCET}
           target="_blank"
           rel="noreferrer noopener"
         >
           <StyledButton data-scroll data-scroll-position="top">
-            <ButtonSpan>Google Search</ButtonSpan>
+            <ButtonSpan>
+              <a href="" className="href">
+                Google Search
+              </a>
+            </ButtonSpan>
           </StyledButton>
         </a>
         <a
-          href={CommunityPage}
+          href={CommunityPageGDSCMGMCET}
           target="_blank"
           rel="noreferrer noopener"
         >
           <StyledButton data-scroll data-scroll-position="top">
-            <ButtonSpan>I&apos;m Feeling Lucky</ButtonSpan>
+            <ButtonSpan>I'm Feeling Lucky</ButtonSpan>
           </StyledButton>
         </a>
       </ButtonContainer>

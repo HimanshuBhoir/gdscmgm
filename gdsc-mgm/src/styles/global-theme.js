@@ -10,6 +10,7 @@ export const theme = {
     darkgrey: '#404040',
     pink: '#fbb4a4',
     purple: '#5339B3',
+    offwhite: '#EEEFF9',
   },
   brightColor: {
     blue: '#57cbff',

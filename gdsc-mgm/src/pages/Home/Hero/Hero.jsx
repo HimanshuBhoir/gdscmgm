@@ -35,8 +35,8 @@ function Hero() {
       }
     }
   }, [isReady]);
-
   return (
+
     <MainContainer data-scroll-section>
       <MainHeader />
       <LogoSection />

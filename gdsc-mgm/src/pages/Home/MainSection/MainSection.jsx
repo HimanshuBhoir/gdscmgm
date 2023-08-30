@@ -1,5 +1,5 @@
 import { SubHeader } from '../../../components/Header/SubHeader';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
 
 import Card from '../Card/Card';
@@ -7,6 +7,8 @@ import Card from '../Card/Card';
 function MainSection() {
   const { color } = useTheme();
   const cardsRef = useRef([]);
+  const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
+
 
   const onClickContainer = () => {
     cardsRef.current.forEach((cardRef) => cardRef.update());
@@ -18,7 +20,7 @@ function MainSection() {
         <SubHeader />
         <CardContainer>
           <CardWrapper>
-            <TitleSpan className="yellow">Design.</TitleSpan>
+            <TitleSpan className="yellow" isHovered={hoveredCardIndex === 1}>Tech</TitleSpan>
             <CardHeight>
               <Card
                 leftText={'01'}
@@ -28,11 +30,14 @@ function MainSection() {
                 ref={(el) => {
                   cardsRef.current[1] = el;
                 }}
+                onMouseEnter={() => setHoveredCardIndex(1)}
+                onMouseLeave={() => setHoveredCardIndex(null)}
+                isHovered={hoveredCardIndex === 1}
               />
             </CardHeight>
           </CardWrapper>
           <CardWrapper>
-            <TitleSpan className="red">Code.</TitleSpan>
+            <TitleSpan className="red" isHovered={hoveredCardIndex === 2}>Alumni</TitleSpan>
             <CardHeight>
               <Card
                 leftText={'02'}
@@ -42,11 +47,14 @@ function MainSection() {
                 ref={(el) => {
                   cardsRef.current[2] = el;
                 }}
+                onMouseEnter={() => setHoveredCardIndex(2)}
+                onMouseLeave={() => setHoveredCardIndex(null)}
+                isHovered={hoveredCardIndex === 1}
               />
             </CardHeight>
           </CardWrapper>
           <CardWrapper>
-            <TitleSpan className="blue">Build.</TitleSpan>
+            <TitleSpan className="blue" isHovered={hoveredCardIndex === 3}>Event</TitleSpan>
             <CardHeight>
               <Card
                 leftText={'03'}
@@ -56,6 +64,9 @@ function MainSection() {
                 ref={(el) => {
                   cardsRef.current[3] = el;
                 }}
+                onMouseEnter={() => setHoveredCardIndex(3)}
+                onMouseLeave={() => setHoveredCardIndex(null)}
+                isHovered={hoveredCardIndex === 1}
               />
             </CardHeight>
           </CardWrapper>
@@ -121,6 +132,14 @@ const TitleSpan = styled.span`
   &.yellow {
     color: ${(props) => props.theme.color.yellow};
   }
+
+  ${(props) =>
+    props.isHovered &&
+    `
+    color: ${props.theme.color.white};
+    transform: scale(1.05);
+  `}
+
 `;
 
 const CardHeight = styled.div`
@@ -141,10 +160,17 @@ const CardContainer = styled.div`
 `;
 
 const CardWrapper = styled.div`
-  width: 18vw;
+width: 18vw;
+// transition: opacity 0.3s ease;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+opacity: ${(props) => (props.isHovered ? 1 : 0.7)};
+cursor: pointer;
+
+&:hover {
+  opacity: 1;
+}
 `;
