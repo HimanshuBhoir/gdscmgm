@@ -3,7 +3,7 @@ import 'css-doodle';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
-function BlossomDoodle({ shapeFrequency = 0.4 }, ref) {
+function BlossomDoodle({ shapeFrequency = 0.2 }, ref) {
   return (
     <Container>
       <style>
@@ -11,7 +11,7 @@ function BlossomDoodle({ shapeFrequency = 0.4 }, ref) {
           css-doodle {
             --randomColor: @p(#ea3323, #007cf3, #1fb254, #ffbb25);
             --rule: (
-              overflow: hidden;
+              // overflow: hidden;
               
               :before {
                 content: '';
@@ -21,7 +21,7 @@ function BlossomDoodle({ shapeFrequency = 0.4 }, ref) {
               
               @random(${shapeFrequency}) {
                 @random {
-                  border-radius: 0px 0px 100% 100%;
+                  border-radius: 100% 0 100% 0;
                   background: linear-gradient(90deg, var(--randomColor) 50%, var(--randomColor) 50%);
                   
                   :before {
@@ -37,7 +37,7 @@ function BlossomDoodle({ shapeFrequency = 0.4 }, ref) {
                 }
                 
                 @random { 
-                  border-radius: 100% 100% 0 0;
+                  border-radius: 100% 100% 100% 100%;
                   background: linear-gradient(90deg, var(--randomColor) 50%, var(--randomColor) 50%);
                   
                   :before {
@@ -54,8 +54,8 @@ function BlossomDoodle({ shapeFrequency = 0.4 }, ref) {
                 @random {
                 background: none;
 
-                -webkit-clip-path: @pick(circle(50% at 50% 50%), polygon(0 0, 100% 0, 100% 100%, 0% 100%));
-                clip-path: @pick(circle(50% at 50% 50%), polygon(0 0, 100% 0, 100% 100%, 0% 100%));
+                // -webkit-clip-path: @pick(circle(50% at 50% 50%));
+                // clip-path: @pick(circle(50% at 50% 50%));
 
                 transform: rotate(@pick(0, 90deg, 180deg));
                 -webkit-transition: ease @rand(200ms, 600ms);
@@ -76,7 +76,7 @@ function BlossomDoodle({ shapeFrequency = 0.4 }, ref) {
       <css-doodle use="var(--rule)" ref={ref}>
         {`
           :doodle {
-            @grid: 6x9;
+            @grid: 7*10;
             @size: 49.5% 80%;
 
             overflow: hidden;

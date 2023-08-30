@@ -12,15 +12,11 @@ function Hero() {
       <MainWrapper data-scroll data-scroll-sticky data-scroll-target="#aboutus-container">
         <TextSection>
           <MainSpan blur={scrollPos / 40} opacity={Math.max(1 - scrollPos / height, 0)}>
-            Code
+            Looking for us ?
           </MainSpan>
-          <SearchBar translateZ={scrollPos / 7} />
-          <MainSpan blur={scrollPos / 40} opacity={Math.max(1 - scrollPos / height, 0)}>
-            With
-          </MainSpan>
-          <MainSpan blur={scrollPos / 40} opacity={Math.max(1 - scrollPos / height, 0)}>
-            Google
-          </MainSpan>
+          <hr />
+          <SearchBar translateZ={scrollPos / 2} />
+          
         </TextSection>
       </MainWrapper>
       <TextWrapper>

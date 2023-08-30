@@ -19,7 +19,7 @@ function MobileMainSection() {
         <CardContainer>
           <CardWrapper id="mobile-main-developer">
             <TitleSpan data-scroll data-scroll-speed="1.5" className="yellow">
-              Design.
+              Tech
             </TitleSpan>
             <CardControl>
               <Card
@@ -35,7 +35,7 @@ function MobileMainSection() {
           </CardWrapper>
           <CardWrapper id="mobile-main-student">
             <TitleSpan data-scroll data-scroll-speed="1.5" className="red">
-              Code.
+              Alumni
             </TitleSpan>
             <CardControl>
               <Card
@@ -51,7 +51,7 @@ function MobileMainSection() {
           </CardWrapper>
           <CardWrapper>
             <TitleSpan data-scroll data-scroll-speed="1.5" className="blue">
-              Build.
+              Event
             </TitleSpan>
             <CardControl id="mobile-main-clubs">
               <Card
