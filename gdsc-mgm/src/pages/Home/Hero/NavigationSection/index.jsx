@@ -33,7 +33,7 @@ function NavigationSection() {
         >
           <StyledButton data-scroll data-scroll-position="top">
             <ButtonSpan>
-              <a href="" className="href">
+              <a href={CommunityPageGDSCMGMCET} target="_blank" className="href">
                 Google Search
               </a>
             </ButtonSpan>
@@ -45,7 +45,11 @@ function NavigationSection() {
           rel="noreferrer noopener"
         >
           <StyledButton data-scroll data-scroll-position="top">
-            <ButtonSpan>I'm Feeling Lucky</ButtonSpan>
+          <ButtonSpan>
+              <a href={CommunityPageGDSCMGMCET} target="_blank" className="href">
+                I'm Feeling Lucky
+              </a>
+            </ButtonSpan>
           </StyledButton>
         </a>
       </ButtonContainer>

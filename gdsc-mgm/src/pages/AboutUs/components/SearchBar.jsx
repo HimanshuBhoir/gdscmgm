@@ -4,24 +4,30 @@ import styled, { keyframes } from 'styled-components';
 function EyesLookingDown({ translateZ }) {
   const [eyeColor1, setEyeColor1] = useState(getRandomColor());
   const [eyeColor2, setEyeColor2] = useState(getRandomColor());
+  const [containerBorderColor, setContainerBorderColor] = useState(getRandomColor());
+  const [eyeBorderColor1, setEyeBorderColor1] = useState(getRandomColor());
+  const [eyeBorderColor2, setEyeBorderColor2] = useState(getRandomColor());
 
   useEffect(() => {
     const interval = setInterval(() => {
       setEyeColor1(getRandomColor());
       setEyeColor2(getRandomColor());
-    }, 2000); // Change colors every 2 seconds
+      setContainerBorderColor(getRandomColor());
+      setEyeBorderColor1(getRandomColor());
+      setEyeBorderColor2(getRandomColor());
+    }, 1500); // Change colors every 1.5 seconds
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <Container translateZ={translateZ}>
+    <Container translateZ={translateZ} borderColor={containerBorderColor}>
       <EyeWrapper>
-        <Eye color={eyeColor1}>
+        <Eye color={eyeColor1} borderColor={eyeBorderColor1}>
           <Pupil />
         </Eye>
       </EyeWrapper>
       <EyeWrapper>
-        <Eye color={eyeColor2}>
+        <Eye color={eyeColor2} borderColor={eyeBorderColor2}>
           <Pupil />
         </Eye>
       </EyeWrapper>
@@ -30,7 +36,7 @@ function EyesLookingDown({ translateZ }) {
 }
 
 function getRandomColor() {
-  const colors = ['red', 'blue', 'green', 'yellow'];
+  const colors = ['#F44336', '#2196F3', '#4CAF50', '#FFC107'];
   const randomIndex = Math.floor(Math.random() * colors.length);
   return colors[randomIndex];
 }
@@ -38,6 +44,7 @@ function getRandomColor() {
 const Container = styled.div.attrs((props) => ({
   style: {
     transform: `perspective(400px) translateZ(${props.translateZ}px)`,
+    borderColor: `${props.borderColor}`,
   },
 }))`
   display: flex;
@@ -46,8 +53,9 @@ const Container = styled.div.attrs((props) => ({
   height: auto;
   padding-bottom: 20px;
   background-color: transparent;
-  border-radius: 50%;
-  border: 5px solid ${props => getRandomColor()}; /* Change border color randomly */
+  border-top-right-radius: 100%;
+  border-top-left-radius: 100%;
+  border: 5px solid; /* Border color will be applied dynamically */
   overflow: hidden;
 `;
 
@@ -55,7 +63,8 @@ const EyeWrapper = styled.div`
   width: 80px;
   height: 100px;
   margin: 0 10px;
-
+  display: flex;
+  align-items: flex-end;
   @media screen and (max-width: 768px) {
     width: 60px;
     height: 75px;
@@ -67,7 +76,7 @@ const moveUpDown = keyframes`
     transform: translateY(0);
   }
   50% {
-    transform: translateY(15px);
+    transform: translateY(17px);
   }
 `;
 
@@ -76,7 +85,7 @@ const blink = keyframes`
     transform: scale(1);
   }
   50% {
-    transform: scale(0.9);
+    transform: scale(0.89);
   }
 `;
 
@@ -84,45 +93,34 @@ const Eye = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: ${props => props.color};
-  border: 5px solid ${props => props.color}; /* Change border color randomly */
+  background-color: ${props => props.color}; /* Color of the eye */
+  border: 2px solid ${props => props.borderColor}; /* Border color of the eye */
   position: relative;
   animation: ${blink} 2s infinite alternate;
 
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 10px;
-    width: 20px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #e0e0e0;
-  }
-
   &:before {
-    left: 10px;
+    left: 20%;
   }
 
   &:after {
-    right: 10px;
+    right: 20%;
   }
 `;
 
 const Pupil = styled.div`
   position: absolute;
-  bottom: 20px;
+  bottom: 35%;
   left: 35%;
   transform: translateX(-50%);
-  width: 30px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background-color: #222;
-  animation: ${moveUpDown} 3s infinite alternate;
+  animation: ${moveUpDown} 2s ease-in-out infinite alternate;
 
   @media screen and (max-width: 768px) {
     width: 20px;
-    height: 30px;
+    height: 20px;
   }
 `;
 

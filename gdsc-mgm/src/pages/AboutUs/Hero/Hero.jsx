@@ -12,10 +12,9 @@ function Hero() {
       <MainWrapper data-scroll data-scroll-sticky data-scroll-target="#aboutus-container">
         <TextSection>
           <MainSpan blur={scrollPos / 40} opacity={Math.max(1 - scrollPos / height, 0)}>
-            Looking for us ?
+            Want to know us ?
           </MainSpan>
-          <hr />
-          <SearchBar translateZ={scrollPos / 2} />
+          <SearchBar translateZ={scrollPos / 6} />
           
         </TextSection>
       </MainWrapper>
@@ -49,6 +48,9 @@ const MainWrapper = styled.div`
   position: relative;
   z-index: 10;
 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: transparent;
 
   ${({ theme }) => theme.tablet`
