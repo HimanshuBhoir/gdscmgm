@@ -16,7 +16,7 @@ const Container = styled.div`
   padding-top: 5vh;
   padding-bottom: 2vh;
 
-  border-bottom: 3px solid ${(props) => props.theme.lightColor.light};
+  border-bottom: 3px solid ${(props) => props.theme.lightColor.dark};
 
   display: flex;
   justify-content: flex-end;
@@ -27,7 +27,7 @@ const Container = styled.div`
 const Span = styled.span`
   font-size: 20px;
   font-weight: 300;
-  color: ${(props) => props.theme.backgroundColor.white};
+  color: ${(props) => props.theme.backgroundColor.dark};
 
   ${({ theme }) => theme.mobile`
     font-size: 14px;

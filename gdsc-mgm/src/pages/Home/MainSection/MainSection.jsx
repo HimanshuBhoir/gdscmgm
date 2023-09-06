@@ -9,7 +9,6 @@ function MainSection() {
   const cardsRef = useRef([]);
   const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
 
-
   const onClickContainer = () => {
     cardsRef.current.forEach((cardRef) => cardRef.update());
   };
@@ -19,8 +18,14 @@ function MainSection() {
       <OffsetWrapper data-scroll data-scroll-speed={`-10`}>
         <SubHeader />
         <CardContainer>
-          <CardWrapper>
-            <TitleSpan className="yellow" isHovered={hoveredCardIndex === 1}>Tech</TitleSpan>
+          <CardWrapper
+            onMouseEnter={() => setHoveredCardIndex(1)}
+            onMouseLeave={() => setHoveredCardIndex(null)}
+            isHovered={hoveredCardIndex === 1}
+          >
+            {hoveredCardIndex === 1 && (
+              <TitleSpan className="yellow" isHovered={hoveredCardIndex === 1}>Tech</TitleSpan>
+            )}
             <CardHeight>
               <Card
                 leftText={'01'}
@@ -30,14 +35,18 @@ function MainSection() {
                 ref={(el) => {
                   cardsRef.current[1] = el;
                 }}
-                onMouseEnter={() => setHoveredCardIndex(1)}
-                onMouseLeave={() => setHoveredCardIndex(null)}
                 isHovered={hoveredCardIndex === 1}
               />
             </CardHeight>
           </CardWrapper>
-          <CardWrapper>
-            <TitleSpan className="red" isHovered={hoveredCardIndex === 2}>Alumni</TitleSpan>
+          <CardWrapper
+            onMouseEnter={() => setHoveredCardIndex(2)}
+            onMouseLeave={() => setHoveredCardIndex(null)}
+            isHovered={hoveredCardIndex === 2}
+          >
+            {hoveredCardIndex === 2 && (
+              <TitleSpan className="red" isHovered={hoveredCardIndex === 2}>Alumni</TitleSpan>
+            )}
             <CardHeight>
               <Card
                 leftText={'02'}
@@ -47,26 +56,28 @@ function MainSection() {
                 ref={(el) => {
                   cardsRef.current[2] = el;
                 }}
-                onMouseEnter={() => setHoveredCardIndex(2)}
-                onMouseLeave={() => setHoveredCardIndex(null)}
-                isHovered={hoveredCardIndex === 1}
+                isHovered={hoveredCardIndex === 2}
               />
             </CardHeight>
           </CardWrapper>
-          <CardWrapper>
-            <TitleSpan className="blue" isHovered={hoveredCardIndex === 3}>Event</TitleSpan>
+          <CardWrapper
+            onMouseEnter={() => setHoveredCardIndex(3)}
+            onMouseLeave={() => setHoveredCardIndex(null)}
+            isHovered={hoveredCardIndex === 3}
+          >
+            {hoveredCardIndex === 3 && (
+              <TitleSpan className="blue" isHovered={hoveredCardIndex === 3}>Event</TitleSpan>
+            )}
             <CardHeight>
               <Card
                 leftText={'03'}
                 rightText={'Clubs'}
                 color={color.yellow}
-                linkTarget={'/clubs'}
+                linkTarget={'/event'}
                 ref={(el) => {
                   cardsRef.current[3] = el;
                 }}
-                onMouseEnter={() => setHoveredCardIndex(3)}
-                onMouseLeave={() => setHoveredCardIndex(null)}
-                isHovered={hoveredCardIndex === 1}
+                isHovered={hoveredCardIndex === 3}
               />
             </CardHeight>
           </CardWrapper>
@@ -76,12 +87,10 @@ function MainSection() {
   );
 }
 
-export default MainSection;
-
 const Container = styled.section`
   width: 100%;
   height: 100vh;
-  background-color: ${(props) => props.theme.backgroundColor.black};
+  background: linear-gradient(to bottom, white 0%, ${(props) => props.theme.color.offwhite} 100%);
   position: relative;
   z-index: 10;
 
@@ -133,13 +142,15 @@ const TitleSpan = styled.span`
     color: ${(props) => props.theme.color.yellow};
   }
 
+  transition: color 0.3s ease, transform 0.3s ease; /* Added transition for color and transform */
+
+
   ${(props) =>
     props.isHovered &&
     `
-    color: ${props.theme.color.white};
+    color: ${props.theme.color.black};
     transform: scale(1.05);
   `}
-
 `;
 
 const CardHeight = styled.div`
@@ -160,8 +171,7 @@ const CardContainer = styled.div`
 `;
 
 const CardWrapper = styled.div`
-width: 18vw;
-// transition: opacity 0.3s ease;
+width: ${(props) => (props.isHovered ? '22vw' : '18vw')};
 
 display: flex;
 flex-direction: column;
@@ -170,7 +180,12 @@ align-items: center;
 opacity: ${(props) => (props.isHovered ? 1 : 0.7)};
 cursor: pointer;
 
+transition: width 1.05s ease; /* Added transition for width */
+
 &:hover {
+  width: 25vw;
   opacity: 1;
 }
 `;
+
+export default MainSection;

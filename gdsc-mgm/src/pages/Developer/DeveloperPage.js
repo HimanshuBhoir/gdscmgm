@@ -10,7 +10,6 @@ import Introduction from './Introduction/Introduction';
 import MLSection from './JamSection/ML';
 import MobileSection from './JamSection/Mobile';
 import WebSection from './JamSection/Web';
-import SectionIntro from './SectionIntro/SectionIntro';
 
 function DeveloperPage() {
   const { handleAnimationStart, handleAnimationComplete } = useHandleAnimationScroll();
@@ -29,7 +28,6 @@ function DeveloperPage() {
         <Container data-scroll-container ref={containerRef}>
           <Banner />
           <Introduction />
-          <SectionIntro />
           <WebSection />
           <MobileSection />
           <MLSection />

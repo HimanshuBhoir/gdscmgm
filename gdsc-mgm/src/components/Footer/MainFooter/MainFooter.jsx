@@ -41,7 +41,7 @@ const Container = styled.footer`
   min-height: 50px;
 
   padding: 0 15px;
-  border-top: 1px solid #dadce0;
+  border: 1.2px solid #dadce0;
 
   display: flex;
   justify-content: space-between;

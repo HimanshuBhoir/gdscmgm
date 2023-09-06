@@ -58,7 +58,7 @@ function MobileMainSection() {
                 leftText={'03'}
                 rightText={'Clubs'}
                 color={color.yellow}
-                linkTarget={'/clubs'}
+                linkTarget={'/event'}
                 ref={(el) => {
                   cardsRef.current[3] = el;
                 }}
@@ -76,7 +76,7 @@ export default MobileMainSection;
 const Container = styled.div`
   width: 100%;
   height: fit-content;
-  background-color: ${(props) => props.theme.backgroundColor.black};
+  background: linear-gradient(to bottom, white 0%, ${(props) => props.theme.color.offwhite} 100%);
   position: relative;
   z-index: 10;
 

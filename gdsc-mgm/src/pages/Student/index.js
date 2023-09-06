@@ -8,6 +8,7 @@ import { useContext, useRef } from 'react';
 import styled, { useTheme } from 'styled-components';
 import Banner from './Banner/Banner';
 import { MemberSection } from './MemberSection';
+import Footer from './Footer/Footer';
 
 function StudentPage() {
   const { handleAnimationStart, handleAnimationComplete } = useHandleAnimationScroll();
@@ -30,6 +31,7 @@ function StudentPage() {
             <MemberSection />
             {isMobileOrTablet ? null : <LinkedInCursor />}
           </MouseContextProvider>
+          <Footer />
         </Container>
       </LocomotiveScrollProvider.Vertical>
       <LoadingScreen

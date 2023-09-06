@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import styled, { theme } from 'styled-components';
-import Drawers from '../components/Drawer';
-
+import Arrow from '../Arrow';
 
 function Introduction() {
   const [hoveredSection, setHoveredSection] = useState(null);
@@ -10,10 +9,7 @@ function Introduction() {
 
   return (
     <Container data-scroll-section hoveredSection={hoveredSection}>
-      <Title>Can I help you explore our tech stack?</Title>
-      <DrawerContainer>
-        <Drawers />
-      </DrawerContainer>
+      <Arrow />
     </Container>
   );
 }

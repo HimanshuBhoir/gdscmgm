@@ -77,8 +77,8 @@ const Container = styled.figure`
   width: 100%;
   height: 100%;
 
-  background-color: transparent;
-  border: 1px solid ${(props) => props.theme.lightColor.light};
+  background-color: white;
+  border: 2px solid ${(props) => props.theme.lightColor.dark};
 
   position: relative;
 
@@ -114,11 +114,11 @@ const TextWrapper = styled.div`
 `;
 
 const LeftText = styled.span`
-  color: ${(props) => props.theme.backgroundColor.white};
+  color: ${(props) => props.theme.backgroundColor.black};
   font-size: 44px;
 `;
 
 const RightText = styled.span`
-  color: ${(props) => props.theme.backgroundColor.white};
+  color: ${(props) => props.theme.backgroundColor.black};
   font-size: 20px;
 `;

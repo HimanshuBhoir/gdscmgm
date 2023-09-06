@@ -6,10 +6,12 @@ import { useContext, useRef } from 'react';
 import styled, { useTheme } from 'styled-components';
 
 import Banner from './Banner/Banner';
-import { GalleryComponent } from './GalleryComponent';
+import Introduction from './Introduction/Introduction';
+import Progress from './Progress/Progress';
 
-function ClubsPage() {
+function EventPage() {
   const { handleAnimationStart, handleAnimationComplete } = useHandleAnimationScroll();
+
   const { transitionColorHandler } = useContext(TransitionColorContext);
   const { color } = useTheme();
   const containerRef = useRef(null);
@@ -20,13 +22,13 @@ function ClubsPage() {
 
   return (
     <>
-      <LocomotiveScrollProvider.Horizontal containerRef={containerRef}>
-        <Container data-scroll-container ref={containerRef} id="#fixed-element-clubs-container">
+      <LocomotiveScrollProvider.Vertical containerRef={containerRef}>
+        <Container data-scroll-container ref={containerRef}>
           <Banner />
-          <GalleryPadding data-scroll-section />
-          <GalleryComponent />
+          <Introduction />
+          {/* <Progress /> */}
         </Container>
-      </LocomotiveScrollProvider.Horizontal>
+      </LocomotiveScrollProvider.Vertical>
       <LoadingScreen
         handleAnimationStart={handleAnimationStart}
         handleAnimationComplete={handleAnimationComplete}
@@ -35,30 +37,17 @@ function ClubsPage() {
   );
 }
 
-export default ClubsPage;
+export default EventPage;
 
 const Container = styled.main`
-  width: fit-content;
-  height: 100vh;
+  width: 100%;
 
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
   font-family: 'Google Sans', sans-serif;
-  perspective: 1px; // for locomotive-scroll element disappearance bug fix.
+  perspective: 1px;
   background-color: ${(props) => props.theme.backgroundColor.white};
-
-  ${({ theme }) => theme.tablet`
-    height: calc(var(--vh, 1vh) * 100);
-  `}
-`;
-
-const GalleryPadding = styled.div`
-  width: 100vw;
-  height: 100%;
-
-  background: linear-gradient(
-    to right,
-    ${(props) => props.theme.backgroundColor.white} 0%,
-    ${(props) => props.theme.backgroundColor.black} 80%
-  );
 `;

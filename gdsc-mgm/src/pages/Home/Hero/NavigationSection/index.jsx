@@ -76,6 +76,7 @@ const Container = styled.div`
 const NavbarContainer = styled.div`
   width: 100%;
   padding: 0 auto;
+  // background: white;
 
   display: flex;
   flex-direction: column;
